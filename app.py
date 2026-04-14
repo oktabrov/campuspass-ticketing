@@ -255,7 +255,10 @@ def api_bookings():
 def api_status():
     """Report which student modules are loaded — shown in the UI footer."""
     return jsonify({
-        "exceptions": _exceptions_mod is not None,
+        "exceptions": _exceptions_mod is not None and all(
+            hasattr(_exceptions_mod, c)
+            for c in ("TicketingError", "InvalidBookingError", "SoldOutError", "DuplicateBookingError")
+        ),
         "models": _models_mod is not None,
         "validators": _validators_mod is not None,
         "gateway": _gateway_mod is not None,
