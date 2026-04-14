@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 from flask import Flask, render_template, request, jsonify
 
 from campuspass.seed_data import EVENTS
@@ -52,6 +53,11 @@ def load_student_modules():
 
 _event_store: dict = {}  # event_id -> Event object or plain dict
 _bookings: list = []  # list of booking records
+
+
+def _python_files_to_watch() -> list[str]:
+    root = Path(__file__).resolve().parent
+    return [str(path) for path in root.rglob("*.py")]
 
 
 def _build_event_store():
@@ -294,4 +300,9 @@ if __name__ == "__main__":
     load_student_modules()
     _build_event_store()
     print("🎫 CampusPass is running at http://localhost:5001\n")
-    app.run(debug=False, port=5001)
+    app.run(
+        debug=False,
+        use_reloader=True,
+        extra_files=_python_files_to_watch(),
+        port=5001,
+    )
