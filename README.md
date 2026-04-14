@@ -190,6 +190,19 @@ Build the full checkout pipeline that ties everything together: validate input â
 
 ---
 
+## Contributing
+
+We welcome contributions from students! Here's how you can get involved:
+
+- **Report a bug or suggest an improvement:** [Open an issue](https://github.com/sukhrobyangibaev/campuspass-ticketing/issues/new)
+- **Submit your own fix or feature:**
+  1. [Fork this repository](https://github.com/sukhrobyangibaev/campuspass-ticketing/fork)
+  2. Clone your fork: `git clone https://github.com/<your-username>/campuspass-ticketing.git`
+  3. Create a branch, make your changes, and push: `git push origin your-branch-name`
+  4. [Open a pull request](https://github.com/sukhrobyangibaev/campuspass-ticketing/compare) from your fork back to this repo
+
+---
+
 ## Acknowledgment
 
 This tutorial format was suggested by Maftuna Ro'zmetova (SE1) - thank you for the idea!
