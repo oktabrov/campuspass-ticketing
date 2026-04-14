@@ -1,4 +1,4 @@
-# 🎫 CampusPass — Event Ticketing System
+# CampusPass — Event Ticketing System
 
 You are building the backend logic for **CampusPass**, a campus event ticketing platform. Students can browse upcoming events — concerts, hackathons, workshops, comedy nights — and book tickets. The frontend and server are already built. Your job is to implement the Python classes that power the booking system, with a focus on **robust exception handling**.
 
