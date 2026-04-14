@@ -189,12 +189,9 @@ def api_book(event_id):
         # Fallback: basic extraction with no validation
         email = data.get("email", "")
         tier_name = data.get("tier_name", "")
-        try:
-            quantity = int(data.get("quantity", 0))
-        except (ValueError, TypeError):
-            return jsonify({"error": "Invalid quantity", "error_type": "ValidationError"}), 400
+        quantity = data.get("quantity", 0)
 
-        if not email or not tier_name or quantity <= 0:
+        if not email or not tier_name:
             return jsonify({"error": "Missing or invalid fields", "error_type": "ValidationError"}), 400
 
     # --- Task 6: Use checkout service if available ---
