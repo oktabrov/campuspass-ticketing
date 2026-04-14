@@ -77,8 +77,6 @@ Add a `book(email, tier_id, quantity)` method. It should:
 - Raise `DuplicateBookingError` if this email has already booked this event
 - Otherwise, reserve the tickets on the correct tier and record the booking
 
-You will need to import your exceptions from `campuspass.exceptions` and you will need to track booked emails and sold tickets internally.
-
 **Verify:** Event cards should now show a "Book Tickets" button instead of "Booking not available". You can successfully book tickets, and the remaining count decreases. Trying to book with a bad tier name, zero quantity, or the same email twice should show error messages.
 
 ---
