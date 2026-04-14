@@ -125,15 +125,15 @@ function openBooking(eventId) {
         <form id="booking-form" onsubmit="submitBooking(event)">
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="your@email.com" required>
+                <input type="text" id="email" placeholder="your@email.com">
             </div>
             <div class="form-group">
                 <label for="tier">Ticket Type</label>
-                <select id="tier" required>${tierOptions}</select>
+                <select id="tier">${tierOptions}<option value="bad_tier">💀 Bad Tier (test)</option></select>
             </div>
             <div class="form-group">
                 <label for="quantity">Quantity</label>
-                <input type="number" id="quantity" value="1" min="1" max="10" required>
+                <input type="text" id="quantity" value="1">
             </div>
             <div class="form-group">
                 <label for="payment_token">Payment Token</label>
